@@ -13,7 +13,12 @@ indexPath = __dirname + "/views/index.html";
 app.use("/public", express.static(pubPath));
 jsonMessage = "Hello json";
 
-
+app.get('/now', function(req, res, next){
+  req.time = new Date().toString();
+  function(req,res,next){
+    res.json({'time': req.time})
+  };
+});
 app.get("/", function(req, res) {
   //res.send("Hello Express")
   res.sendFile(indexPath);
