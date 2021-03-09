@@ -14,7 +14,6 @@ app.use("/public", express.static(pubPath));
 jsonMessage = "Hello json";
 
 
-
 app.get("/", function(req, res) {
   //res.send("Hello Express")
   res.sendFile(indexPath);
@@ -23,17 +22,6 @@ app.get("/", function(req, res) {
   }
   //res.json({ message: jsonMessage });
 });
-
-
-
-
-
-
-
-
-
-
-
 
 
 
