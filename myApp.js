@@ -19,7 +19,7 @@ app.get("/", function(req, res) {
   res.sendFile(indexPath);
   if (process.env.MESSAGE_STYLE == "uppercase") {
     jsonMessage = jsonMessage.toUpperCase();
-  }
+  };
   //res.json({ message: jsonMessage });
 });
 
