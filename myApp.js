@@ -13,6 +13,16 @@ indexPath = __dirname + "/views/index.html";
 app.use("/public", express.static(pubPath));
 jsonMessage = "Hello json";
 
+
+app.route('/name')
+  .get(function(req,res){
+    var { first: firstName, last: lastName } = req.query;
+    res.json({name: `${firstName} ${lastName}`});
+  })
+  .post(function(req,res){
+    res.json({name: req.query.firstname + ' ' + req.query.lastname});
+  });
+
 app.get("/:word/echo", function(req, res, next){
   res.json({echo: req.params.word});
 });
