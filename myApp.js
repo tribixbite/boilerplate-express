@@ -15,7 +15,6 @@ jsonMessage = "Hello json";
 
 app.get("/:word/echo", function(req, res, next){
   res.json({echo: req.params.word});
-  next();
 });
 
 app.get("/now", function(req, res, next){
