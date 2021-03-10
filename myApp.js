@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+var bodyParser = require('body-parser');
 
 app.use(function middleware(req, res, next) {
   console.log(req.method + " " + req.path + " - " + req.ip);
@@ -12,7 +12,7 @@ pubPath = __dirname + "/public";
 indexPath = __dirname + "/views/index.html";
 app.use("/public", express.static(pubPath));
 jsonMessage = "Hello json";
-
+app.use("/post", bodyParser.urlencoded({extended: false}));
 
 app.route('/name')
   .get(function(req,res){
