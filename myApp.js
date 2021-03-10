@@ -20,7 +20,8 @@ app.route('/name')
     res.json({name: `${firstName} ${lastName}`});
   })
   .post(function(req,res){
-    res.json({name: req.query.firstname + ' ' + req.query.lastname});
+    var { first: firstName, last: lastName } = req.body;
+    res.json({name: `${firstName} ${lastName}`});
   });
 
 app.get("/:word/echo", function(req, res, next){
