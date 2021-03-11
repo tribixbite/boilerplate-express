@@ -22,10 +22,10 @@ app.route('/name')
     res.json({name: `${firstName} ${lastName}`});
   })
   .post(function(req,res){
-    console.log(req.body);
+    //console.log(req.body);
     console.log('test');
     var names = req.body.first + " " + req.body.last;
-    res.json({ name: string });
+    res.json({ name: names });
     //var { first: firstName, last: lastName } = req.body;
     //res.json({name: `${firstName} ${lastName}`});
   });
